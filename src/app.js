@@ -7,7 +7,7 @@ require("dotenv").config();
 
 app.use(express.json());
 
-mongoose.connect("mongodb://localhost:27017/grafixui");
+mongoose.connect(process.env.MONGO_URI);
 
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
